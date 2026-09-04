@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <title>Yalcın Teknik Tesisat - Sıhhi Tesisat İşleriniz İçin 7/24 Arayın</title>
+    <meta name="description" content="Yalcın Teknik Tesisat olarak tüm sıhhi tesisat işleri için 7/24 hizmetinizdeyiz. Tıkanıklık açma, su kaçağı tespiti, kombi bakımı ve montaj işleri.">
+    <style>
+        :root {
+            --navy-950: #0b1f33;
+            --navy-900: #102b46;
+            --navy-800: #173f63;
+            --blue-600: #2474a8;
+            --blue-500: #2f86bb;
+            --blue-100: #e9f2f7;
+            --blue-50: #f5f9fc;
+            --accent: #c67a3a;
+            --accent-soft: #f4e7da;
+            --emergency: #d84242;
+            --call: #e75a54;
+            --wp-green: #25d366;
+            --text: #203040;
+            --text-soft: #566575;
+            --text-muted: #73808c;
+            --surface: #ffffff;
+            --surface-soft: #f7fafc;
+            --border: #dbe4eb;
+            --shadow-sm: 0 4px 14px rgba(11, 31, 51, .07);
+            --shadow-md: 0 12px 30px rgba(11, 31, 51, .10);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            line-height: 1.68;
+            color: var(--text);
+            background: var(--blue-50);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        h1, h2, h3, .logo-text, .eyebrow, .btn-kahve, .ara-btn, nav ul a {
+            font-family: 'Manrope', 'Inter', 'Segoe UI', sans-serif;
+        }
+
+        img { display: block; max-width: 100%; }
+
+        /* ------- Üst telefon barı ------- */
+        .top-bar {
+            background: var(--navy-950);
+            color: #fff;
+            display: flex;
+            justify-content: flex-end;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.02rem;
+            letter-spacing: .25px;
+            padding: .58rem 2.5rem .58rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+        }
+
+        /* ------- Header / Menü ------- */
+        header {
+            background: rgba(255,255,255,.97);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 14px rgba(11,31,51,.07);
+            backdrop-filter: blur(8px);
+        }
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: .9rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo svg { width: 54px; height: 54px; }
+        .logo-text {
+            color: var(--navy-900);
+            font-weight: 800;
+            font-size: 1.24rem;
+            line-height: 1.08;
+            letter-spacing: .35px;
+            text-transform: uppercase;
+        }
+        nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 2rem;
+        }
+        nav ul a {
+            color: var(--navy-800);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: color .2s, background .2s, transform .2s;
+        }
+        nav ul a:hover { color: var(--blue-600); }
+        nav ul a.iletisim-btn {
+            background: var(--navy-900);
+            color: #fff;
+            padding: .66rem 1.5rem;
+            border-radius: 9px;
+            box-shadow: 0 4px 12px rgba(16,43,70,.14);
+        }
+        nav ul a.iletisim-btn:hover {
+            background: var(--blue-600);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* ------- Hero ------- */
+        .hero {
+            background: linear-gradient(115deg, #ffffff 0%, #f6fafc 58%, #eef6fa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(340px, 46%) 1fr;
+            align-items: center;
+        }
+        .hero-text { padding: 4.5rem 0 4.5rem 4rem; position: relative; z-index: 2; }
+        .hero-text .eyebrow {
+            color: var(--blue-600);
+            font-weight: 800;
+            font-size: .98rem;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            margin-bottom: .9rem;
+        }
+        .hero-text h1 {
+            color: var(--navy-950);
+            font-size: clamp(2.55rem, 4vw, 3.55rem);
+            line-height: 1.08;
+            font-weight: 800;
+            letter-spacing: -.9px;
+            margin-bottom: 1.6rem;
+        }
+        .hero-desc {
+            background: rgba(233, 242, 247, .96);
+            border-left: 4px solid var(--blue-600);
+            padding: 1.45rem 1.65rem;
+            font-size: 1.06rem;
+            color: var(--text-soft);
+            text-align: left;
+            margin-right: -4rem;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+        .hero-desc b { color: var(--navy-900); }
+        .badge-724 {
+            background: var(--emergency);
+            color: #fff;
+            font-weight: 800;
+            padding: .06rem .5rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .hero-phone {
+            display: inline-block;
+            background: var(--navy-900);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.16rem;
+            padding: .42rem .95rem;
+            margin-top: .7rem;
+            border-radius: 6px;
+            text-decoration: none;
+            letter-spacing: .35px;
+            transition: background .2s, transform .2s;
+        }
+        .hero-phone:hover { background: var(--blue-600); transform: translateY(-1px); }
+        .hero-media { position: relative; min-height: 540px; }
+        .hero-media::before {
+            content: "";
+            position: absolute;
+            left: -42px;
+            top: -34px;
+            width: 94px;
+            height: 94px;
+            background: var(--accent-soft);
+            z-index: 1;
+        }
+        .hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            inset: 0;
+        }
+
+        /* ------- Bölüm başlıkları ------- */
+        .section-title {
+            color: var(--navy-950);
+            text-align: center;
+            font-size: 2.15rem;
+            font-weight: 800;
+            letter-spacing: -.35px;
+            text-transform: none;
+            margin-bottom: 2.5rem;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 54px;
+            height: 3px;
+            background: var(--blue-600);
+            border-radius: 999px;
+            margin: .7rem auto 0;
+        }
+
+        /* ------- Hakkımızda ------- */
+        .hakkimizda-wrap { padding: 4.5rem 2rem; }
+        .hakkimizda-card {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: var(--surface);
+            border-top: 4px solid var(--blue-600);
+            border-radius: 10px;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 480px 1fr;
+            gap: 3rem;
+            align-items: center;
+            box-shadow: var(--shadow-md);
+        }
+        .hakkimizda-card img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+        .hakkimizda-icerik h2 {
+            color: var(--navy-950);
+            text-align: left;
+            font-size: 2.05rem;
+            font-weight: 800;
+            letter-spacing: -.3px;
+            margin-bottom: 1.3rem;
+        }
+        .hakkimizda-icerik p {
+            text-align: left;
+            color: var(--text-soft);
+            font-size: 1.04rem;
+            margin-bottom: 1rem;
+        }
+        .btn-kahve {
+            display: inline-block;
+            background: var(--navy-900);
+            color: #fff;
+            font-weight: 700;
+            padding: .82rem 1.55rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background .2s, transform .2s;
+        }
+        .btn-kahve:hover { background: var(--blue-600); transform: translateY(-1px); }
+        .hakkimizda-icerik .btn-satir { text-align: right; margin-top: 1.5rem; }
+
+        /* ------- Hizmetler ------- */
+        .hizmetler { padding: 2.5rem 2rem 4.5rem; }
+        .hizmet-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .hizmet-kart {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .hizmet-kart:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .hizmet-kart img { height: 210px; width: 100%; object-fit: cover; }
+        .hizmet-govde { padding: 1.5rem 1.6rem 1.7rem; display: flex; flex-direction: column; flex: 1; }
+        .hizmet-govde h3 {
+            font-size: 1.28rem;
+            color: var(--navy-950);
+            font-weight: 800;
+            margin-bottom: .7rem;
+            letter-spacing: -.2px;
+        }
+        .hizmet-govde p { color: var(--text-soft); font-size: 1rem; flex: 1; }
+        .etiketler { margin-top: 1.35rem; display: flex; flex-wrap: wrap; gap: .55rem; }
+        .etiket {
+            background: var(--blue-100);
+            color: var(--navy-800);
+            border: 1px solid #d4e5ee;
+            font-size: .88rem;
+            font-weight: 600;
+            padding: .34rem .85rem;
+            border-radius: 999px;
+        }
+
+        /* ------- Kısa kısa işler ------- */
+        .isler { padding: 3.5rem 2rem 4.5rem; background: #fff; }
+        .isler-inner { max-width: 1280px; margin: 0 auto; }
+        .isler h2 {
+            color: var(--navy-950);
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -.4px;
+            margin-bottom: 2.2rem;
+        }
+        .isler-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0 3rem;
+        }
+        .isler ul { list-style: none; }
+        .isler li {
+            color: var(--text-soft);
+            font-size: 1.03rem;
+            padding: .48rem 0;
+            display: flex;
+            align-items: center;
+            gap: .72rem;
+            border-bottom: 1px solid #edf1f4;
+        }
+        .isler li::before {
+            content: "✓";
+            flex: 0 0 auto;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--blue-600);
+            color: #fff;
+            font-size: .72rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ------- Neden biz ------- */
+        .neden { padding: 4rem 2rem 4.5rem; }
+        .neden-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.6rem;
+        }
+        .neden-kart {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--blue-600);
+            border-radius: 9px;
+            padding: 1.8rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .neden-kart h3 { color: var(--navy-900); font-size: 1.14rem; font-weight: 800; margin-bottom: .5rem; }
+        .neden-kart p { color: var(--text-soft); }
+
+        /* ------- Footer / İletişim ------- */
+        footer {
+            background: var(--navy-950);
+            color: #fff;
+            text-align: center;
+            padding: 3.2rem 2rem 2.2rem;
+        }
+        footer h2 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -.2px;
+            margin-bottom: 1.4rem;
+        }
+        footer p { color: #dce5ec; margin-bottom: .6rem; font-size: 1.03rem; }
+        footer a { color: #8fd0f1; text-decoration: none; font-weight: 700; }
+        footer a:hover { color: #fff; text-decoration: underline; }
+        .telif { margin-top: 2rem; opacity: .66; font-size: .92rem; }
+
+        /* ------- Sabit butonlar (WhatsApp + Hemen Ara) ------- */
+        .sabit-butonlar {
+            position: fixed;
+            left: 20px;
+            bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            z-index: 2000;
+        }
+        .wp-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: var(--wp-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,.18);
+        }
+        .wp-btn svg { width: 32px; height: 32px; fill: #fff; }
+        .ara-btn {
+            background: var(--call);
+            color: #fff;
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: .45px;
+            padding: .82rem 1.45rem;
+            border-radius: 999px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,.18);
+        }
+        .ara-btn .tel-icon {
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ara-btn .tel-icon svg { width: 16px; height: 16px; fill: var(--call); }
+
+        /* ------- Duyarlılık ------- */
+        @media (max-width: 1024px) {
+            .hero-inner { grid-template-columns: 1fr; }
+            .hero-text { padding: 3.2rem 2rem 0; }
+            .hero-desc { margin-right: 0; }
+            .hero-media { min-height: 380px; margin-top: 2rem; }
+            .hero-media::before { display: none; }
+            .hizmet-grid { grid-template-columns: repeat(2, 1fr); }
+            .hakkimizda-card { grid-template-columns: 1fr; }
+            .isler-grid { grid-template-columns: repeat(2, 1fr); }
+            .neden-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            nav { flex-direction: column; }
+            nav ul { gap: 1.1rem; flex-wrap: wrap; justify-content: center; }
+            .hero-text h1 { font-size: 2.2rem; }
+            .hizmet-grid, .isler-grid, .neden-grid { grid-template-columns: 1fr; }
+            .hakkimizda-card { padding: 1.5rem; }
+            .hakkimizda-icerik h2 { text-align: center; }
+            .sabit-butonlar { left: 12px; bottom: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Üst telefon barı -->
+    <div class="top-bar">
+        <a href="tel:05394325780">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+            +90 539 432 57 80
+        </a>
+    </div>
+
+    <!-- Menü -->
+    <header>
+        <nav>
+            <a href="#anasayfa" class="logo">
+                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 34 L32 14 L56 34 L50 34 L50 54 L14 54 L14 34 Z" fill="#102b46"/>
+                    <path d="M40 26a8 8 0 01-10.9 7.45L22 40.5l-4.5-4.5 7.05-7.1A8 8 0 0132 18c1 0 1.96.18 2.85.52l-4.6 4.6 3.55 3.55 4.6-4.6c.38.92.6 1.92.6 2.93z" fill="#fff"/>
+                </svg>
+                <span class="logo-text">Yalcın Teknik<br>Tesisat</span>
+            </a>
+            <ul>
+                <li><a href="#hakkimizda">Hakkımızda</a></li>
+                <li><a href="#hizmetler">Hizmetlerimiz</a></li>
+                <li><a href="#isler">Yaptığımız İşler</a></li>
+                <li><a href="#iletisim" class="iletisim-btn">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="anasayfa">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <div class="eyebrow">Su Tesisat Ustası</div>
+                <h1>Sıhhi Tesisat İşleriniz İçin 7/24 Arayın</h1>
+                <div class="hero-desc">
+                    <b>Yalcın Teknik Tesisat</b> olarak, tüm sıhhi tesisat işleri için yanınızdayız.
+                    Bizi <span class="badge-724">7/24</span> Sıhhi Tesisat Tamiri, Gider Tıkanıklığı Açma,
+                    Su Kaçağı Tespiti, Kombi Bakımı, Petek Temizliği, Musluk Değişimi ve Montaj işleri
+                    için arayabilirsiniz.<br>
+                    <a class="hero-phone" href="tel:05394325780">0539 432 57 80</a>
+                </div>
+            </div>
+            <div class="hero-media">
+                <img src="images/hero.jpg" alt="Sıhhi tesisat ustası banyoda çalışıyor">
+            </div>
+        </div>
+    </section>
+
+    <!-- Hakkımızda -->
+    <section class="hakkimizda-wrap" id="hakkimizda">
+        <div class="hakkimizda-card">
+            <img src="images/hakkimizda.jpg" alt="Tesisat ustası müşteriyle görüşüyor">
+            <div class="hakkimizda-icerik">
+                <h2>Hakkımızda</h2>
+                <p>Yalcın Teknik Tesisat, uzun yıllardır sıhhi tesisat sektöründe faaliyet göstermektedir. Müşterilerimize kaliteli ve güvenilir hizmet sunma misyonuyla hareket etmekteyiz ve sektördeki deneyimimizle öne çıkmaktayız.</p>
+                <p>Müşterilerimize sunduğumuz hizmetler arasında banyo ve mutfak tesisatı kurulumu, tamiri ve bakımı, kombi bakımı ve petek temizliği, su kaçağı tespiti ve onarımı gibi geniş bir yelpaze bulunmaktadır. Ekibimiz, her türlü sıhhi tesisat sorununun üstesinden gelebilmek için sürekli eğitimden geçmektedir.</p>
+                <p>Deneyimli ve profesyonel ekibimizle İstanbul genelinde hizmet vermekteyiz. Bizi tüm sıhhi tesisat işleriniz için 7 gün 24 saat arayabilirsiniz.</p>
+                <div class="btn-satir">
+                    <a class="btn-kahve" href="https://www.instagram.com/yalcntekniktesisat" target="_blank" rel="noopener noreferrer">Instagram'da Biz</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hizmetler -->
+    <section class="hizmetler" id="hizmetler">
+        <h2 class="section-title">Hizmetlerimiz</h2>
+        <div class="hizmet-grid">
+
+            <div class="hizmet-kart">
+                <img src="images/lavabo.jpg" alt="Lavabo tıkanıklığı açma">
+                <div class="hizmet-govde">
+                    <h3>Sıhhi Tesisat Montaj</h3>
+                    <p>Profesyonel ekibimizle tüm sıhhi tesisat montaj işlemlerinizi güvenle gerçekleştiriyoruz. Mutfak, banyo, lavabo ve klozet dahil tüm su tesisatı kurulumları.</p>
+                    <div class="etiketler">
+                        <span class="etiket">Tüm Su Tesisatı</span>
+                        <span class="etiket">Banyo Montajı</span>
+                        <span class="etiket">Klozet montajı</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hizmet-kart">
+                <img src="images/kalorifer.jpg" alt="Kombi bakımı ve petek temizliği">
+                <div class="hizmet-govde">
+                    <h3>Kombi Bakım ve Petek Temizliği</h3>
+                    <p>Kombinizin uzun ömürlü olması için düzenli bakım ve petek temizliği hizmetleri. Tüm marka kombiler için servis desteği.</p>
+                    <div class="etiketler">
+                        <span class="etiket">Kombi bakımı</span>
+                        <span class="etiket">Petek temizliği</span>
+                        <span class="etiket">Petek vana değişimi</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hizmet-kart">
+                <img src="images/pimas.jpg" alt="Tıkalı gider açma">
+                <div class="hizmet-govde">
+                    <h3>Tıkalı Gider Açma</h3>
+                    <p>Lavabo, tuvalet, duş ve mutfak giderlerinizdeki tıkanıklık sorunlarını en son teknoloji ekipmanlarla çözüyoruz.</p>
+                    <div class="etiketler">
+                        <span class="etiket">Gider tıkanıklığı açma</span>
+                        <span class="etiket">Pimaş açma</span>
+                        <span class="etiket">Lavabo açma</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hizmet-kart">
+                <img src="images/kacak.jpg" alt="Su kaçağı tespiti">
+                <div class="hizmet-govde">
+                    <h3>Su Kaçağı Tespiti</h3>
+                    <p>Cihazlarımızla su kaçağını kırmadan tespit ediyoruz. Duvar içi ve zemin altı su kaçaklarında uzman ekip.</p>
+                    <div class="etiketler">
+                        <span class="etiket">Su kaçağı tamiri</span>
+                        <span class="etiket">Kameralı tespit</span>
+                        <span class="etiket">Kırmadan tespit</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hizmet-kart">
+                <img src="images/gider.jpg" alt="Logar ve drenaj açma">
+                <div class="hizmet-govde">
+                    <h3>Logar ve Drenaj Açma</h3>
+                    <p>Bina logar ve drenaj sistemlerinizdeki tıkanıklıkları makine ile açıyoruz. 7/24 acil müdahale.</p>
+                    <div class="etiketler">
+                        <span class="etiket">Bina pissu rögar işleri</span>
+                        <span class="etiket">Drenaj açma</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hizmet-kart">
+                <img src="images/tamir.jpg" alt="Acil tesisat müdahalesi">
+                <div class="hizmet-govde">
+                    <h3>Acil Müdahale</h3>
+                    <p>Gece gündüz demeden 7/24 acil tesisat sorunlarınıza anında müdahale ediyoruz. İstanbul geneli hızlı servis.</p>
+                    <div class="etiketler">
+                        <span class="etiket">7/24 servis</span>
+                        <span class="etiket">Hızlı müdahale</span>
+                        <span class="etiket">İstanbul geneli</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Kısa kısa işler -->
+    <section class="isler" id="isler">
+        <div class="isler-inner">
+            <h2>Kısa Kısa Yaptığımız İşler</h2>
+            <div class="isler-grid">
+                <ul>
+                    <li>Tüm Su Tesisatı</li>
+                    <li>Kombi boru su tesisat kaçağı</li>
+                    <li>Kombi bakımı</li>
+                    <li>Pimaş boru değişimi</li>
+                    <li>Petek vana su kaçağı</li>
+                    <li>Bina pissu rögar işleri</li>
+                    <li>Tuvalet klozet montajı</li>
+                    <li>Lavabo tıkanıklığı açma</li>
+                    <li>Makine ile su kaçağı tespiti</li>
+                    <li>Banyo gideri açma</li>
+                    <li>Tesisat gider açma</li>
+                    <li>Su kaçak tespiti</li>
+                    <li>Gider tıkanması</li>
+                    <li>Musluk tamiri</li>
+                    <li>Tıkalı gider açma</li>
+                </ul>
+                <ul>
+                    <li>Su Tesisatı</li>
+                    <li>Banyo su kaçağı</li>
+                    <li>Su kaçağı tamiri</li>
+                    <li>Klozet montajı</li>
+                    <li>Banyo süzgeç montajı</li>
+                    <li>Su ve pissu tesisat</li>
+                    <li>Su ve pissu tesisat montajı</li>
+                    <li>Mutfak tıkanıklığı açma</li>
+                    <li>Tuvalet gider açma</li>
+                    <li>Lavabo gider açma</li>
+                    <li>Su kaçağı bulma</li>
+                    <li>Gömme rezervuar tamiri</li>
+                    <li>Pimaş tıkanıklığı açma</li>
+                    <li>Batarya tamiri</li>
+                    <li>Kameralı su kaçağı tespiti</li>
+                </ul>
+                <ul>
+                    <li>Sıhhi Tesisat</li>
+                    <li>Ara musluk değişimi</li>
+                    <li>Petek vana değişimi</li>
+                    <li>Petek temizliği</li>
+                    <li>Klozet tamir bakım</li>
+                    <li>Doğalgaz kalorifer tesisatı</li>
+                    <li>Pissu kaçağı tamiri</li>
+                    <li>Su tesisat ustası</li>
+                    <li>Pimaş açma</li>
+                    <li>Su sızıntısı tespiti</li>
+                    <li>Klozet tamiri</li>
+                    <li>Mutfak gider açma</li>
+                    <li>Tıkalı lavabo açma</li>
+                    <li>Klozet tıkanıklığı açma</li>
+                    <li>Gider açma</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neden biz -->
+    <section class="neden">
+        <h2 class="section-title">Neden Bizi Tercih Etmelisiniz?</h2>
+        <div class="neden-grid">
+            <div class="neden-kart">
+                <h3>⚡ Hızlı Servis</h3>
+                <p>30 dakika içinde yerinizde</p>
+            </div>
+            <div class="neden-kart">
+                <h3>👨‍🔧 Uzman Ekip</h3>
+                <p>Deneyimli profesyoneller</p>
+            </div>
+            <div class="neden-kart">
+                <h3>🔒 Güvenilir</h3>
+                <p>Sigortalı ve garantili</p>
+            </div>
+            <div class="neden-kart">
+                <h3>💰 Uygun Fiyat</h3>
+                <p>Şeffaf ve makul ücretler</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim / Footer -->
+    <footer id="iletisim">
+        <h2>İletişim</h2>
+        <p>Telefon: <a href="tel:05394325780">0539 432 57 80</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/yalcntekniktesisat" target="_blank" rel="noopener noreferrer">@yalcntekniktesisat</a></p>
+        <p>İstanbul Geneli Hizmet Veriyoruz &middot; 7/24 Acil Servis</p>
+        <p class="telif">© 2026 Yalcın Teknik Tesisat. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- Sabit WhatsApp + Hemen Ara -->
+    <div class="sabit-butonlar">
+        <a class="wp-btn" href="https://wa.me/905394325780" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile yazın">
+            <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.6.8 5 2.3 7L4 29l7.3-2.3c1.9 1 4 1.6 6.2 1.6 6.6 0 12-5.3 12-11.9C29.5 8.3 22.6 3 16 3zm0 21.8c-2 0-3.9-.6-5.5-1.6l-.4-.2-4.1 1.3 1.3-4-.3-.4c-1.2-1.7-1.9-3.8-1.9-6 0-5.4 4.4-9.8 9.9-9.8s9.9 4.4 9.9 9.8-4.4 9.9-9.9 9.9zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.5-.3z"/></svg>
+        </a>
+        <a class="ara-btn" href="tel:05394325780">
+            <span class="tel-icon">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.01l-2.2 2.21z"/></svg>
+            </span>
+            HEMEN ARA
+        </a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yalcın Teknik Tesisat - 7/24 Acil Servis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        .contact-btn {
+            background: #e74c3c;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .contact-btn:hover {
+            background: #c0392b;
+            color: white !important;
+        }
+
+        .hero {
+            margin-top: 80px;
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('bursa-sihhi-tesisat.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: #e74c3c;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        .cta-button:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+        }
+
+        /* Social link styling for Instagram */
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            transition: transform .18s, box-shadow .18s;
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            flex: 0 0 20px;
+        }
+
+        .social-link:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 26px rgba(0,0,0,0.16);
+        }
+
+        .phone-banner {
+            background: #e74c3c;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 999;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+        }
+
+        .services {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .about {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .features {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            padding: 1.5rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 80px;
+            left: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 2rem 100px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">🔧</div>
+                <span>Yalcın Teknik Tesisat</span>
+            </div>
+            <ul>
+                <li><a href="#anasayfa">Ana Sayfa</a></li>
+                <li><a href="#hizmetler">Hizmetler</a></li>
+                <li><a href="#hakkimizda">Hakkımızda</a></li>
+                <li><a href="#iletisim" class="contact-btn">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="anasayfa">
+        <div class="hero-content">
+            <h1>7/24 Acil Tesisat Hizmetleri</h1>
+            <h3>Instagram adresimiz: 
+                <a class="social-link" href="https://www.instagram.com/yalcntekniktesisat" target="_blank" rel="noopener noreferrer" aria-label="Open Instagram profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path fill="white" d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm10 2H7a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3z"/>
+                        <path fill="white" d="M12 8a4 4 0 100 8 4 4 0 000-8zm0 2a2 2 0 110 4 2 2 0 010-4z"/>
+                        <circle cx="17.5" cy="6.5" r="0.8" fill="white"/>
+                    </svg>
+                    <span>@yalcntekniktesisat</span>
+                </a>
+            </h3>
+            <p>🔧 Sıhhi Tesisat Hizmeti | 🔥 Tesisat Montajı(Banyo-Mutfak-Lavabo-Klozet vb.) | 🚿 Kombi Bakımı & Arıza<br>
+            💧 Petek Temizliği | 📍 Bakım Onarım Tamir | ⚡ Su Kaçağı Tespiti | 🔥 Doğalgaz Kalorifer Tesisatı </p>
+            <a href="tel:05394325780" class="cta-button">📞 Hemen Ara: 0539 432 57 80</a>
+        </div>
+    </section>
+
+    <section class="services" id="hizmetler">
+        <h2>Hizmetlerimiz</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Sıhhi Tesisat Montaj</h3>
+                <p>Profesyonel ekibimizle tüm sıhhi tesisat montaj işlemlerinizi güvenle gerçekleştiriyoruz. Mutfak, banyo ve tüm su tesisatı kurulumları.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔥</div>
+                <h3>Kombi Bakım ve Petek Temizliği</h3>
+                <p>Kombinizin uzun ömürlü olması için düzenli bakım ve petek temizliği hizmetleri. Tüm marka kombiler için servis desteği.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚿</div>
+                <h3>Tıkalı Gider Açma</h3>
+                <p>Lavabo, tuvalet, duş ve mutfak giderlerinizdeki tıkanıklık sorunlarını en son teknoloji ekipmanlarla çözüyoruz.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💧</div>
+                <h3>Su Kaçağı Tespiti</h3>
+                <p>Cihazlarımızla su kaçağını kırmadan tespit ediyoruz. Duvar içi, zemin altı su kaçaklarında uzman ekip.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>Logar ve Drenaj Açma</h3>
+                <p>Bina logar ve drenaj sistemlerinizdeki tıkanıklıkları makine ile açıyoruz. 7/24 acil müdahale.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Acil Müdahale</h3>
+                <p>Gece gündüz demeden 7/24 acil tesisat sorunlarınıza anında müdahale ediyoruz. İstanbul geneli hızlı servis.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="hakkimizda">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Hakkımızda</h2>
+                <p>Sürekli gelişen bir sektörde, en son tesisat teknolojileri ve teknikleriyle güncel kalmanın öneminin farkındayız.</p>
+                <p>Ekibimiz, önümüze çıkan her türlü sıhhi tesisat sorununun üstesinden gelebilecek donanıma sahip olduğumuzdan emin olmak için sürekli eğitimden geçmektedir.</p>
+                <p>Deneyimli ve profesyonel ekibimizle, İstanbul genelinde 7/24 hizmet vermekteyiz. Müşteri memnuniyeti bizim için her şeyden önce gelir.</p>
+            </div>
+            <div class="about-images">
+                <div class="about-img"><img src="1.jpeg" alt="Tesisat İşi"></div>
+                <div class="about-img"><img src="2.jpeg" alt="Tesisat İşi"></div>
+                <div class="about-img"><img src="3.jpeg" alt="Tesisat İşi"></div>
+                <div class="about-img"><img src="4.jpeg" alt="Tesisat İşi"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Neden Bizi Tercih Etmelisiniz?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>⚡ Hızlı Servis</h3>
+                <p>30 dakika içinde yerinizde</p>
+            </div>
+            <div class="feature-item">
+                <h3>👨‍🔧 Uzman Ekip</h3>
+                <p>Deneyimli profesyoneller</p>
+            </div>
+            <div class="feature-item">
+                <h3>🔒 Güvenilir</h3>
+                <p>Sigortalı ve garantili</p>
+            </div>
+            <div class="feature-item">
+                <h3>💰 Uygun Fiyat</h3>
+                <p>Şeffaf ve makul ücretler</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="iletisim">
+        <h2>İletişim</h2>
+        <p>📞 Telefon: 0539 432 57 80</p>
+        <p>📍 İstanbul Geneli Hizmet Veriyoruz</p>
+        <p>🕐 7/24 Acil Servis</p>
+        <p style="margin-top: 2rem; opacity: 0.7;">© 2026 Profesyonel Tesisat Hizmetleri. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <div class="whatsapp-float" onclick="window.open('https://wa.me/905394325780', '_blank')">
+        💬
+    </div>
+
+    <div class="phone-banner">
+        📞 7/24 Arayın, sorunu bu günden çözelim  0539 432 57 80
+    </div>
+</body>
+
+</html>
+
+
